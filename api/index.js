@@ -12,7 +12,7 @@ app.use((req,res,next) =>{
 
 // route 
 
-app.get("/api", (req,res)=>{
+app.get("/api/putri", (req,res)=>{
     res.send("Putri Mulyani")
 })
 
