@@ -1,4 +1,5 @@
 import express from "express";
+import {client} from './server.js'
 
 const app = express();
 
@@ -14,6 +15,10 @@ app.use((req,res,next) =>{
 
 app.get("/api/putri", (req,res)=>{
     res.send("Putri Mulyani")
+})
+
+app.get("/api/data",async (req,res)=>{
+    res.send((await client.query("select * from mahasiswa")).rows)
 })
 
 app.listen(3000, ()=>{

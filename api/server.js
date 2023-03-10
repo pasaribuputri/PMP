@@ -1,14 +1,13 @@
-import mariadb from 'mariadb';
+import pkg from 'pg';
 
-const pool = mariadb.createPool({
+const { Client } = pkg;
+
+export const client = new Client({
+    user: "postgres",
+    database: "integer",
     host: "localhost",
-    port: 3306,
-    user: "root",
-    database: "pmp",
-    password: "",
-});
+    password: "171002",
+    port: "5432",
+})
 
-const conn = await pool.getConnection();
-
-const result = await conn.query("select * from mahasiswa");
-console.log(result);
+await client.connect();
