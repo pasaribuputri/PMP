@@ -11,3 +11,4 @@ export const client = new Client({
 })
 
 await client.connect();
+console.log("Connection")
